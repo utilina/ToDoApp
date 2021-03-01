@@ -9,14 +9,20 @@ import CoreLocation
 
 struct Location {
 
+    // MARK: - Properties
+
     let name: String
     let coordinate: CLLocationCoordinate2D?
+
+    // MARK: - Initialization
 
     init(name: String, coordinate: CLLocationCoordinate2D? = nil) {
         self.name = name
         self.coordinate = coordinate
     }
 }
+
+// MARK: - Equatable protocol
 
 extension Location: Equatable {
     static func == (lhs: Location, rhs: Location) -> Bool {

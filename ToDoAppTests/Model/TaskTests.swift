@@ -10,6 +10,8 @@ import XCTest
 
 class TaskTests: XCTestCase {
 
+    // MARK: - Functions
+
     func testInitTaskWithTitle() {
         let task = Task(title: "Foo") // Foo Bar Bus
 

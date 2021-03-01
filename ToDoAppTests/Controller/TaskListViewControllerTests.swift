@@ -10,13 +10,19 @@ import XCTest
 
 class TaskListViewControllerTests: XCTestCase {
 
+    // MARK: - Properties
+
     var sut: TaskListViewController?
+
+    // MARK: - Lifecycle
 
     override func setUpWithError() throws {
         sut = TaskListViewController()
 
         _ = sut?.view // sut.loadViewIfNeeded()
     }
+
+    // MARK: - Functions
 
     func testWhenViewIsLoadTableViewNotNil() {
         XCTAssertNotNil(sut?.tableView)

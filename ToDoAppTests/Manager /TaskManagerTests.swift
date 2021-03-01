@@ -10,7 +10,11 @@ import XCTest
 
 class TaskManagerTests: XCTestCase {
 
+    // MARK: - Properties
+
     var sut: TaskManager!
+
+    // MARK: - Lifecycle
 
     override func setUpWithError() throws {
         sut = TaskManager()
@@ -19,6 +23,8 @@ class TaskManagerTests: XCTestCase {
     override func tearDownWithError() throws {
         sut = nil
     }
+
+    // MARK: - Functions
 
     func testInitTaskManagerWithZeroTasks() {
         XCTAssertEqual(sut.tasksCount, 0)

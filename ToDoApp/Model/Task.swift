@@ -9,10 +9,14 @@ import Foundation
 
 struct Task {
 
+    // MARK: - Properties
+
     let title: String
     let descriptiton: String?
     private(set) var date: Date?
     let location: Location?
+
+    // MARK: - Initialization
 
     init(title: String, description: String? = nil, location: Location? = nil ) {
         self.title = title
@@ -21,6 +25,8 @@ struct Task {
         self.date = Date()
     }
 }
+
+// MARK: - Equatable protocol
 
 extension Task: Equatable {
     static func == (lhs: Task, rhs: Task) -> Bool {

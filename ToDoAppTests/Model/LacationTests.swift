@@ -11,11 +11,7 @@ import CoreLocation
 
 class LacationTests: XCTestCase {
 
-    override func setUpWithError() throws {
-    }
-
-    override func tearDownWithError() throws {
-    }
+    // MARK: - Functions
 
     func testInitSetsName() {
         let location = Location(name: "Foo")

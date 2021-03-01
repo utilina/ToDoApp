@@ -7,6 +7,8 @@
 
 class TaskManager {
 
+    // MARK: - Properties
+
     private var tasks: [Task] = []
     var tasksCount: Int {
         return tasks.count
@@ -15,6 +17,9 @@ class TaskManager {
     var doneTasksCount: Int {
         return doneTasks.count
     }
+
+    // MARK: - Functions
+
     func add(task: Task) {
         if !tasks.contains(task) {
             tasks.append(task)
