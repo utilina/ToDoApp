@@ -24,6 +24,11 @@
 		5B75C37B25ECFC48004DC4B2 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B75C37A25ECFC48004DC4B2 /* DataProvider.swift */; };
 		5B75C38825ED00A4004DC4B2 /* DataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B75C38725ED00A4004DC4B2 /* DataProviderTests.swift */; };
 		5B75C39825ED18C3004DC4B2 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B75C39725ED18C3004DC4B2 /* TaskCell.swift */; };
+		5B75C3A125EE33DF004DC4B2 /* TaskCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B75C3A025EE33DF004DC4B2 /* TaskCellTests.swift */; };
+		5BB8011225EE912B00EDAA32 /* NewTaskViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB8011125EE912B00EDAA32 /* NewTaskViewControllerTests.swift */; };
+		5BB8011725EE917D00EDAA32 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB8011625EE917D00EDAA32 /* NewTaskViewController.swift */; };
+		5BCF6B3225EE730A00CD12C3 /* DeteilViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF6B3125EE730A00CD12C3 /* DeteilViewControllerTests.swift */; };
+		5BCF6B3725EE736500CD12C3 /* DeteilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF6B3625EE736500CD12C3 /* DeteilViewController.swift */; };
 		641B02F33951A0766D2FDCBE /* Pods_ToDoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A30023D8B899F136E03C12 /* Pods_ToDoAppTests.framework */; };
 		BA98BB39B35285EBCCDD6684 /* Pods_ToDoApp_ToDoAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782941AB51D70D79EA72009B /* Pods_ToDoApp_ToDoAppUITests.framework */; };
 		FFC83B5B1AEF3C9119AD0E1F /* Pods_ToDoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE88ECD3711B37DD15E27AD8 /* Pods_ToDoApp.framework */; };
@@ -74,6 +79,11 @@
 		5B75C37A25ECFC48004DC4B2 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		5B75C38725ED00A4004DC4B2 /* DataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderTests.swift; sourceTree = "<group>"; };
 		5B75C39725ED18C3004DC4B2 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		5B75C3A025EE33DF004DC4B2 /* TaskCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellTests.swift; sourceTree = "<group>"; };
+		5BB8011125EE912B00EDAA32 /* NewTaskViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewControllerTests.swift; sourceTree = "<group>"; };
+		5BB8011625EE917D00EDAA32 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
+		5BCF6B3125EE730A00CD12C3 /* DeteilViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeteilViewControllerTests.swift; sourceTree = "<group>"; };
+		5BCF6B3625EE736500CD12C3 /* DeteilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeteilViewController.swift; sourceTree = "<group>"; };
 		5DEFACF5980B2B070D682332 /* Pods-ToDoApp-ToDoAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoApp-ToDoAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-ToDoApp-ToDoAppUITests/Pods-ToDoApp-ToDoAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		782941AB51D70D79EA72009B /* Pods_ToDoApp_ToDoAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoApp_ToDoAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F4950F6CB8876F9AD7E5850 /* Pods-ToDoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoApp.debug.xcconfig"; path = "Target Support Files/Pods-ToDoApp/Pods-ToDoApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +157,7 @@
 		5B3537A725DFFCF50045D917 /* ToDoAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				5B75C39F25EE33CC004DC4B2 /* View */,
 				5B75C36525ECE130004DC4B2 /* Controller */,
 				5B35380125E10A100045D917 /* Manager  */,
 				5B3537ED25E103670045D917 /* Model */,
@@ -198,6 +209,8 @@
 			children = (
 				5B35379525DFFCF10045D917 /* TaskListViewController.swift */,
 				5B75C37A25ECFC48004DC4B2 /* DataProvider.swift */,
+				5BCF6B3625EE736500CD12C3 /* DeteilViewController.swift */,
+				5BB8011625EE917D00EDAA32 /* NewTaskViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -240,8 +253,18 @@
 			children = (
 				5B75C36625ECE159004DC4B2 /* TaskListViewControllerTests.swift */,
 				5B75C38725ED00A4004DC4B2 /* DataProviderTests.swift */,
+				5BCF6B3125EE730A00CD12C3 /* DeteilViewControllerTests.swift */,
+				5BB8011125EE912B00EDAA32 /* NewTaskViewControllerTests.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		5B75C39F25EE33CC004DC4B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B75C3A025EE33DF004DC4B2 /* TaskCellTests.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A73601B86360AB7222812C12 /* Frameworks */ = {
@@ -469,10 +492,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B35380C25E10A9E0045D917 /* TaskManager.swift in Sources */,
+				5BCF6B3725EE736500CD12C3 /* DeteilViewController.swift in Sources */,
 				5B3537E425E0FD040045D917 /* Task.swift in Sources */,
 				5B35379625DFFCF10045D917 /* TaskListViewController.swift in Sources */,
 				5B75C37B25ECFC48004DC4B2 /* DataProvider.swift in Sources */,
 				5B75C39825ED18C3004DC4B2 /* TaskCell.swift in Sources */,
+				5BB8011725EE917D00EDAA32 /* NewTaskViewController.swift in Sources */,
 				5B3537E925E101E20045D917 /* Location.swift in Sources */,
 				5B35379225DFFCF10045D917 /* AppDelegate.swift in Sources */,
 				5B35379425DFFCF10045D917 /* SceneDelegate.swift in Sources */,
@@ -483,8 +508,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BCF6B3225EE730A00CD12C3 /* DeteilViewControllerTests.swift in Sources */,
 				5B35380325E10A2E0045D917 /* TaskManagerTests.swift in Sources */,
 				5B3537FD25E106850045D917 /* LacationTests.swift in Sources */,
+				5B75C3A125EE33DF004DC4B2 /* TaskCellTests.swift in Sources */,
+				5BB8011225EE912B00EDAA32 /* NewTaskViewControllerTests.swift in Sources */,
 				5B3537A925DFFCF50045D917 /* TaskTests.swift in Sources */,
 				5B75C38825ED00A4004DC4B2 /* DataProviderTests.swift in Sources */,
 				5B75C36725ECE159004DC4B2 /* TaskListViewControllerTests.swift in Sources */,

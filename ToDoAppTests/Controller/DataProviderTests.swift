@@ -119,6 +119,31 @@ class DataProviderTests: XCTestCase {
 
         XCTAssertEqual(buttonTitle, "Undone")
     }
+
+    func testCheckingTaskChecksInTaskManager() {
+        let task = Task(title: "Foo")
+        sut?.taskManager?.add(task: task)
+
+        tableView?.dataSource?.tableView?(tableView!,
+                                          commit: .delete,
+                                          forRowAt: IndexPath(row: 0, section: 0))
+        XCTAssertEqual(sut?.taskManager?.tasksCount, 0)
+        XCTAssertEqual(sut?.taskManager?.doneTasksCount, 1)
+    }
+
+    func testUncheckingTaskUnchecksInTaskManager() {
+        let task = Task(title: "Foo")
+        sut?.taskManager?.add(task: task)
+        sut?.taskManager?.checkTask(at: 0)
+        tableView?.reloadData()
+
+
+        tableView?.dataSource?.tableView?(tableView!,
+                                          commit: .delete,
+                                          forRowAt: IndexPath(row: 0, section: 1))
+        XCTAssertEqual(sut?.taskManager?.tasksCount, 1)
+        XCTAssertEqual(sut?.taskManager?.doneTasksCount, 0)
+    }
 }
 
 extension DataProviderTests {
@@ -133,7 +158,6 @@ extension DataProviderTests {
 
         static func mockTableView(withDataSOurce dataSource: UITableViewDataSource) -> MockTableView {
             let mockTableView = MockTableView(frame: CGRect(x: 0, y: 0, width: 375, height: 640), style: .plain)
-            print(mockTableView.frame.size)
             mockTableView.dataSource = dataSource
             mockTableView.register(MockTaskCell.self, forCellReuseIdentifier: String(describing: TaskCell.self))
             return mockTableView
@@ -143,9 +167,8 @@ extension DataProviderTests {
     class MockTaskCell: TaskCell {
         var task: Task?
 
-        override func configure(withTask task: Task) {
+        override func configure(withTask task: Task, done: Bool = false) {
             self.task = task
         }
     }
-
 }

@@ -20,17 +20,27 @@ class TaskListViewController: UIViewController {
         super.viewDidLoad()
         tableView = UITableView()
         dataProvider = DataProvider()
-        tableView?.register(TaskCell.self, forCellReuseIdentifier: String(describing: TaskCell.self))
+
+        tableView?.register(TaskCell.self, forCellReuseIdentifier: "TaskCell")
+        view.addSubview(tableView!)
+        //tableView?.register(TaskCell.self, forCellReuseIdentifier: String(describing: TaskCell.self))
+
+
         tableView?.delegate = dataProvider
         tableView?.dataSource = dataProvider
-        view.addSubview(tableView!)
+        tableView?.rowHeight = 110
         layoutTableView()
+        tableView?.backgroundColor = .red
     }
 
     // MARK: - Functions
 
     func layoutTableView() {
-        view = tableView
+        tableView?.translatesAutoresizingMaskIntoConstraints = false
+        tableView?.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        tableView?.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView?.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        tableView?.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
 }
 
