@@ -46,7 +46,7 @@ class DeteilViewController: UIViewController {
         }
         super.viewWillAppear(true)
         self.titleLabel.text = task?.title
-        self.descriptionLabel.text = task?.descriptiton
+        self.descriptionLabel.text = task?.description
         self.locationLabel.text = task?.location?.name
         self.dateLabel.text = dateFormatter.string(from: (task?.date)!)
     }

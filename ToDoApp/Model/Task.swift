@@ -12,7 +12,7 @@ struct Task {
     // MARK: - Properties
 
     let title: String
-    let descriptiton: String?
+    let description: String?
     let date: Date
     let location: Location?
 
@@ -21,7 +21,7 @@ struct Task {
     init(title: String, description: String? = nil, date: Date? = nil, location: Location? = nil ) {
         self.title = title
         self.date = date ?? Date()
-        self.descriptiton = description
+        self.description = description
         self.location = location
     }
 }
@@ -31,7 +31,7 @@ struct Task {
 extension Task: Equatable {
     static func == (lhs: Task, rhs: Task) -> Bool {
         if lhs.title == rhs.title,
-           lhs.descriptiton == rhs.descriptiton,
+           lhs.description == rhs.description,
            lhs.location == rhs.location {
             return true
         }

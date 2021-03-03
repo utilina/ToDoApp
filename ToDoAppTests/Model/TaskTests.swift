@@ -33,7 +33,7 @@ class TaskTests: XCTestCase {
     func testWhenGivenDescriptionSetsTitle() {
         let task = Task(title: "Foo", description: "Bar")
 
-        XCTAssertEqual(task.descriptiton, "Bar")
+        XCTAssertEqual(task.description, "Bar")
     }
     func testTaskInitsWithDate() {
         let task = Task(title: "Foo")
