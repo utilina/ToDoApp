@@ -55,7 +55,7 @@ class NewTaskViewControllerTests: XCTestCase {
 
         sut.titleTextField.text = "Foo"
         sut.locationTextField.text = "Bar"
-        sut.dateTextField.text = "01.01.19"
+        //sut.dateTextField.text = "01.01.19"
         sut.adressTextField.text = "Уфа"
         sut.descriptionTextField.text = "Baz"
 
@@ -74,9 +74,7 @@ class NewTaskViewControllerTests: XCTestCase {
 
         let task = sut.taskManager.task(at: 0)
 
-//        wait {
-//            XCTAssertEqual(task, generatedTask)
-//        }
+        XCTAssertEqual(task, generatedTask)
     }
 
     func testSaveButtonHasSaveMethod() {
@@ -110,7 +108,11 @@ class NewTaskViewControllerTests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
     }
 
+    func testSaveDismissesNewTaskViewController() {
+        
+    }
 }
+
 
 extension NewTaskViewControllerTests {
     class MockCLGeocoder: CLGeocoder {

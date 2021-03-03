@@ -10,6 +10,13 @@ import CoreLocation
 
 class NewTaskViewController: UIViewController {
 
+    private enum Constants {
+        static let textFieldsInsets = UIEdgeInsets(top: 10, left: 50, bottom: .zero, right: 50)
+        static let textFieldHeight = CGFloat(50)
+        static let buttonHeight = CGFloat(70)
+        static let buttonWidth = CGFloat(200)
+    }
+
     var taskManager: TaskManager!
     var geocoder = CLGeocoder()
 
@@ -29,6 +36,7 @@ class NewTaskViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .blue
         setupAppearance()
         setupConstraints()
     }
@@ -41,50 +49,65 @@ class NewTaskViewController: UIViewController {
         view.addSubview(adressTextField)
         view.addSubview(cancelButton)
         view.addSubview(saveButton)
-        sutupSaveButton()
+        setupButtons()
+        setupTextfields()
     }
 
-    private func sutupSaveButton() {
+    private func setupButtons() {
+        saveButton.setTitle("Save", for: .normal)
+        saveButton.layer.cornerRadius = 5
+        saveButton.backgroundColor = .green
         saveButton.addTarget(self, action: #selector(save), for: .touchUpInside)
+        cancelButton.setTitle("Cancel", for: .normal)
+        cancelButton.layer.cornerRadius = 5
+        cancelButton.backgroundColor = .red
+    }
+
+    private func setupTextfields() {
+        titleTextField.placeholder = "Title"
+        locationTextField.placeholder = "Place"
+        dateTextField.placeholder = "Date"
+        descriptionTextField.placeholder = "Description"
+        adressTextField.placeholder = "Address"
     }
 
     private func setupConstraints() {
         let views = [titleTextField, locationTextField, dateTextField, descriptionTextField, adressTextField, cancelButton, saveButton]
         let constraints = [
-            titleTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
-            titleTextField.leftAnchor.constraint(equalTo: view.leftAnchor),
-            titleTextField.rightAnchor.constraint(equalTo: view.rightAnchor),
-            titleTextField.heightAnchor.constraint(equalToConstant: 100),
+            titleTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.textFieldsInsets.top),
+            titleTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.textFieldsInsets.left),
+            titleTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: Constants.textFieldsInsets.right),
+            titleTextField.heightAnchor.constraint(equalToConstant: Constants.textFieldHeight),
 
-            locationTextField.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: 5),
-            locationTextField.leftAnchor.constraint(equalTo: view.leftAnchor),
-            locationTextField.rightAnchor.constraint(equalTo: view.rightAnchor),
-            locationTextField.heightAnchor.constraint(equalToConstant: 100),
+            locationTextField.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: Constants.textFieldsInsets.top),
+            locationTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.textFieldsInsets.left),
+            locationTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: Constants.textFieldsInsets.right),
+            locationTextField.heightAnchor.constraint(equalToConstant: Constants.textFieldHeight),
 
-            dateTextField.topAnchor.constraint(equalTo: locationTextField.bottomAnchor, constant: 5),
-            dateTextField.leftAnchor.constraint(equalTo: view.leftAnchor),
-            dateTextField.rightAnchor.constraint(equalTo: view.rightAnchor),
-            dateTextField.heightAnchor.constraint(equalToConstant: 100),
+            dateTextField.topAnchor.constraint(equalTo: locationTextField.bottomAnchor, constant: Constants.textFieldsInsets.top),
+            dateTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.textFieldsInsets.left),
+            dateTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: Constants.textFieldsInsets.right),
+            dateTextField.heightAnchor.constraint(equalToConstant: Constants.textFieldHeight),
 
-            descriptionTextField.topAnchor.constraint(equalTo: dateTextField.bottomAnchor, constant: 5),
-            descriptionTextField.leftAnchor.constraint(equalTo: view.leftAnchor),
-            descriptionTextField.rightAnchor.constraint(equalTo: view.rightAnchor),
-            descriptionTextField.heightAnchor.constraint(equalToConstant: 100),
+            descriptionTextField.topAnchor.constraint(equalTo: dateTextField.bottomAnchor, constant: Constants.textFieldsInsets.top),
+            descriptionTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.textFieldsInsets.left),
+            descriptionTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: Constants.textFieldsInsets.right),
+            descriptionTextField.heightAnchor.constraint(equalToConstant: Constants.textFieldHeight),
 
-            adressTextField.topAnchor.constraint(equalTo: descriptionTextField.bottomAnchor, constant: 5),
-            adressTextField.leftAnchor.constraint(equalTo: view.leftAnchor),
-            adressTextField.rightAnchor.constraint(equalTo: view.rightAnchor),
-            adressTextField.heightAnchor.constraint(equalToConstant: 100),
+            adressTextField.topAnchor.constraint(equalTo: descriptionTextField.bottomAnchor, constant: Constants.textFieldsInsets.top),
+            adressTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.textFieldsInsets.left),
+            adressTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: Constants.textFieldsInsets.right),
+            adressTextField.heightAnchor.constraint(equalToConstant: Constants.textFieldHeight),
 
-            cancelButton.topAnchor.constraint(equalTo: adressTextField.bottomAnchor, constant: 5),
-            cancelButton.leftAnchor.constraint(equalTo: view.leftAnchor),
-            cancelButton.rightAnchor.constraint(equalTo: view.rightAnchor),
-            cancelButton.heightAnchor.constraint(equalToConstant: 100),
+            cancelButton.topAnchor.constraint(equalTo: adressTextField.bottomAnchor, constant: Constants.textFieldsInsets.top),
+            cancelButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            cancelButton.widthAnchor.constraint(equalToConstant: Constants.buttonWidth),
+            cancelButton.heightAnchor.constraint(equalToConstant: Constants.buttonHeight),
 
-            saveButton.topAnchor.constraint(equalTo: cancelButton.bottomAnchor, constant: 5),
-            saveButton.leftAnchor.constraint(equalTo: view.leftAnchor),
-            saveButton.rightAnchor.constraint(equalTo: view.rightAnchor),
-            saveButton.heightAnchor.constraint(equalToConstant: 100)
+            saveButton.topAnchor.constraint(equalTo: cancelButton.bottomAnchor, constant: Constants.textFieldsInsets.top),
+            saveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            saveButton.widthAnchor.constraint(equalToConstant: Constants.buttonWidth),
+            saveButton.heightAnchor.constraint(equalToConstant: Constants.buttonHeight)
             ]
         view.addSubviewsWithConstraints(views, constraints: constraints)
 

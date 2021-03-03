@@ -26,9 +26,10 @@ struct Location {
 
 extension Location: Equatable {
     static func == (lhs: Location, rhs: Location) -> Bool {
-        guard rhs.coordinate?.latitude == lhs.coordinate?.latitude &&
-                rhs.coordinate?.longitude == lhs.coordinate?.latitude &&
-                lhs.name == rhs.name else { return false }
+        guard
+            rhs.coordinate?.latitude == lhs.coordinate?.latitude &&
+            rhs.coordinate?.longitude == lhs.coordinate?.longitude &&
+            lhs.name == rhs.name else { return false }
         return true
     }
 }

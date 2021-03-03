@@ -12,7 +12,7 @@ class TaskListViewControllerTests: XCTestCase {
 
     // MARK: - Properties
 
-    var sut: TaskListViewController?
+    var sut: TaskListViewController!
 
     // MARK: - Lifecycle
 
@@ -25,24 +25,55 @@ class TaskListViewControllerTests: XCTestCase {
     // MARK: - Functions
 
     func testWhenViewIsLoadTableViewNotNil() {
-        XCTAssertNotNil(sut?.tableView)
+        XCTAssertNotNil(sut.tableView)
     }
 
     func testWhenViewIsLoadedDataProviderIsNotNil() {
-        XCTAssertNotNil(sut?.dataProvider)
+        XCTAssertNotNil(sut.dataProvider)
     }
 
     func testWhenViewIsLoadedTableViewDelegateIsSet() {
-        XCTAssertTrue(sut?.tableView?.delegate is DataProvider)
+        XCTAssertTrue(sut.tableView?.delegate is DataProvider)
     }
 
     func testWhenViewIsLoadedTableViewDataSourceIsSet() {
-        XCTAssertTrue(sut?.tableView?.dataSource is DataProvider)
+        XCTAssertTrue(sut.tableView?.dataSource is DataProvider)
     }
 
     func testWhenViewIsLoadedTableViewDelegateEqaulsTableViewDataSource() {
-        XCTAssertEqual(sut?.tableView?.delegate as? DataProvider,
-                       sut?.tableView?.dataSource as? DataProvider)
+        XCTAssertEqual(sut.tableView?.delegate as? DataProvider,
+                       sut.tableView?.dataSource as? DataProvider)
     }
+
+    func testTaskListVCHasAddBarButtonWithSelfAsTarget() {
+        let target = sut.navigationItem.rightBarButtonItem?.target
+        XCTAssertEqual(target as? TaskListViewController, sut)
+    }
+
+    func presentingNewTaskViewController() -> NewTaskViewController {
+
+        guard let newTaskButton = sut.navigationItem.rightBarButtonItem,
+              let action = newTaskButton.action else {
+            return NewTaskViewController()
+        }
+
+        UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController = sut
+        sut.performSelector(onMainThread: action, with: newTaskButton, waitUntilDone: true)
+
+        let newTaskViewController = sut.presentedViewController as! NewTaskViewController
+        return newTaskViewController
+    }
+
+    func testAddNewTaskPresentsNewTaskViewController() {
+        let newTaskViewController = presentingNewTaskViewController()
+        XCTAssertNotNil(newTaskViewController.dateTextField)
+    }
+
+    func testSharesSameTaskManagerWithNewTaskVC() {
+        let newTaskViewController = presentingNewTaskViewController()
+        XCTAssertTrue(newTaskViewController.taskManager === sut.dataProvider?.taskManager)
+    }
+
+
 
 }

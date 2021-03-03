@@ -18,7 +18,10 @@ struct Task {
 
     // MARK: - Initialization
 
-    init(title: String, description: String? = nil, date: Date? = nil, location: Location? = nil ) {
+    init(title: String,
+         description: String? = nil,
+         date: Date? = nil,
+         location: Location? = nil ) {
         self.title = title
         self.date = date ?? Date()
         self.description = description
@@ -30,9 +33,10 @@ struct Task {
 
 extension Task: Equatable {
     static func == (lhs: Task, rhs: Task) -> Bool {
-        if lhs.title == rhs.title,
-           lhs.description == rhs.description,
-           lhs.location == rhs.location {
+        if
+            lhs.title == rhs.title,
+            lhs.description == rhs.description,
+            lhs.location == rhs.location {
             return true
         }
         return false
