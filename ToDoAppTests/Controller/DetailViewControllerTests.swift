@@ -9,7 +9,7 @@ import XCTest
 import CoreLocation
 @testable import ToDoApp
 
-class DeteilViewControllerTests: XCTestCase {
+class DetailViewControllerTests: XCTestCase {
 
     var controller: DeteilViewController?
 
@@ -77,7 +77,10 @@ class DeteilViewControllerTests: XCTestCase {
 //    func testSettingTaskSetsMapView() {
 //        setupTaskAndAppearanceTransition()
 //        guard let latitute = controller?.mapView.centerCoordinate else {fatalError()}
-//        XCTAssertEqual(latitute.latitude, 40.7143528, accuracy: 0.001)
-////        XCTAssertEqual(controller?.mapView.centerCoordinate.longitude as! CLLocationDegrees, -74.0059731, accuracy: 0.001)
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.001) {
+//            XCTAssertEqual(latitute.latitude, 20, accuracy: 0.001)
+//            XCTAssertEqual(self.controller?.mapView.centerCoordinate.longitude as! CLLocationDegrees, -74.0059731, accuracy: 0.001)
+//        }
 //    }
 }

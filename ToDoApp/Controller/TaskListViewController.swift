@@ -21,13 +21,13 @@ class TaskListViewController: UIViewController {
         tableView = UITableView()
         dataProvider = DataProvider()
         let taskManager = TaskManager()
-        dataProvider?.taskManager = taskManager
+        dataProvider.taskManager = taskManager
 
         tableView.register(TaskCell.self, forCellReuseIdentifier: "TaskCell")
         view.addSubview(tableView)
 
-        tableView.delegate = dataProvider
-        tableView.dataSource = dataProvider
+        self.tableView.delegate = dataProvider
+        self.tableView.dataSource = dataProvider
         tableView.rowHeight = 110
         layoutTableView()
         tableView.backgroundColor = .red
@@ -36,12 +36,24 @@ class TaskListViewController: UIViewController {
         navigationItem.rightBarButtonItem = addButton
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
+        print("reload")
+    }
+
+
     @objc func addTask(_ sender: Any){
         let vc = NewTaskViewController()
-        vc.taskManager = self.dataProvider?.taskManager
+        vc.delegate = self
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.taskManager = self.dataProvider.taskManager
         self.present(vc, animated: true, completion: nil)
-
     }
+
+
+
 
     // MARK: - Functions
 
@@ -51,6 +63,12 @@ class TaskListViewController: UIViewController {
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+    }
+}
+
+extension TaskListViewController: ControllerDismissDelegate {
+    func didDismiss(controller: UIViewController) {
+        tableView.reloadData()
     }
 }
 

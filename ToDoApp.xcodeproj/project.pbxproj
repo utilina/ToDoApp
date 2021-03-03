@@ -22,6 +22,8 @@
 		5B35380325E10A2E0045D917 /* TaskManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B35380225E10A2E0045D917 /* TaskManagerTests.swift */; };
 		5B35380C25E10A9E0045D917 /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B35380B25E10A9E0045D917 /* TaskManager.swift */; };
 		5B5A272625EFC57F0096957A /* ToDoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5A272525EFC57F0096957A /* ToDoAppTests.swift */; };
+		5B5A273125EFE3F30096957A /* UITextFieldExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5A273025EFE3F30096957A /* UITextFieldExt.swift */; };
+		5B5A273C25EFF6980096957A /* ControllerDismissDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5A273B25EFF6980096957A /* ControllerDismissDelegate.swift */; };
 		5B75C36725ECE159004DC4B2 /* TaskListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B75C36625ECE159004DC4B2 /* TaskListViewControllerTests.swift */; };
 		5B75C37B25ECFC48004DC4B2 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B75C37A25ECFC48004DC4B2 /* DataProvider.swift */; };
 		5B75C38825ED00A4004DC4B2 /* DataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B75C38725ED00A4004DC4B2 /* DataProviderTests.swift */; };
@@ -32,7 +34,7 @@
 		5B8A6C4E25EFA43700DAD7EC /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A6C4D25EFA43700DAD7EC /* StringExt.swift */; };
 		5BB8011225EE912B00EDAA32 /* NewTaskViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB8011125EE912B00EDAA32 /* NewTaskViewControllerTests.swift */; };
 		5BB8011725EE917D00EDAA32 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB8011625EE917D00EDAA32 /* NewTaskViewController.swift */; };
-		5BCF6B3225EE730A00CD12C3 /* DeteilViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF6B3125EE730A00CD12C3 /* DeteilViewControllerTests.swift */; };
+		5BCF6B3225EE730A00CD12C3 /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF6B3125EE730A00CD12C3 /* DetailViewControllerTests.swift */; };
 		5BCF6B3725EE736500CD12C3 /* DeteilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCF6B3625EE736500CD12C3 /* DeteilViewController.swift */; };
 		641B02F33951A0766D2FDCBE /* Pods_ToDoAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A30023D8B899F136E03C12 /* Pods_ToDoAppTests.framework */; };
 		BA98BB39B35285EBCCDD6684 /* Pods_ToDoApp_ToDoAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782941AB51D70D79EA72009B /* Pods_ToDoApp_ToDoAppUITests.framework */; };
@@ -82,6 +84,8 @@
 		5B35380225E10A2E0045D917 /* TaskManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagerTests.swift; sourceTree = "<group>"; };
 		5B35380B25E10A9E0045D917 /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
 		5B5A272525EFC57F0096957A /* ToDoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoAppTests.swift; sourceTree = "<group>"; };
+		5B5A273025EFE3F30096957A /* UITextFieldExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExt.swift; sourceTree = "<group>"; };
+		5B5A273B25EFF6980096957A /* ControllerDismissDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerDismissDelegate.swift; sourceTree = "<group>"; };
 		5B75C36625ECE159004DC4B2 /* TaskListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewControllerTests.swift; sourceTree = "<group>"; };
 		5B75C37A25ECFC48004DC4B2 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		5B75C38725ED00A4004DC4B2 /* DataProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProviderTests.swift; sourceTree = "<group>"; };
@@ -92,7 +96,7 @@
 		5B8A6C4D25EFA43700DAD7EC /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		5BB8011125EE912B00EDAA32 /* NewTaskViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewControllerTests.swift; sourceTree = "<group>"; };
 		5BB8011625EE917D00EDAA32 /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
-		5BCF6B3125EE730A00CD12C3 /* DeteilViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeteilViewControllerTests.swift; sourceTree = "<group>"; };
+		5BCF6B3125EE730A00CD12C3 /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
 		5BCF6B3625EE736500CD12C3 /* DeteilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeteilViewController.swift; sourceTree = "<group>"; };
 		5DEFACF5980B2B070D682332 /* Pods-ToDoApp-ToDoAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoApp-ToDoAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-ToDoApp-ToDoAppUITests/Pods-ToDoApp-ToDoAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		782941AB51D70D79EA72009B /* Pods_ToDoApp_ToDoAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoApp_ToDoAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +138,7 @@
 			children = (
 				5B3115BF25EF7420003F44FE /* UIViewExt.swift */,
 				5B8A6C4D25EFA43700DAD7EC /* StringExt.swift */,
+				5B5A273025EFE3F30096957A /* UITextFieldExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				5B35379525DFFCF10045D917 /* TaskListViewController.swift */,
+				5B5A273B25EFF6980096957A /* ControllerDismissDelegate.swift */,
 				5B75C37A25ECFC48004DC4B2 /* DataProvider.swift */,
 				5BCF6B3625EE736500CD12C3 /* DeteilViewController.swift */,
 				5BB8011625EE917D00EDAA32 /* NewTaskViewController.swift */,
@@ -284,7 +290,7 @@
 			children = (
 				5B75C36625ECE159004DC4B2 /* TaskListViewControllerTests.swift */,
 				5B75C38725ED00A4004DC4B2 /* DataProviderTests.swift */,
-				5BCF6B3125EE730A00CD12C3 /* DeteilViewControllerTests.swift */,
+				5BCF6B3125EE730A00CD12C3 /* DetailViewControllerTests.swift */,
 				5BB8011125EE912B00EDAA32 /* NewTaskViewControllerTests.swift */,
 			);
 			path = Controller;
@@ -527,6 +533,8 @@
 				5B8A6C4625EF930E00DAD7EC /* APIClient.swift in Sources */,
 				5BCF6B3725EE736500CD12C3 /* DeteilViewController.swift in Sources */,
 				5B3537E425E0FD040045D917 /* Task.swift in Sources */,
+				5B5A273125EFE3F30096957A /* UITextFieldExt.swift in Sources */,
+				5B5A273C25EFF6980096957A /* ControllerDismissDelegate.swift in Sources */,
 				5B35379625DFFCF10045D917 /* TaskListViewController.swift in Sources */,
 				5B75C37B25ECFC48004DC4B2 /* DataProvider.swift in Sources */,
 				5B3115C025EF7420003F44FE /* UIViewExt.swift in Sources */,
@@ -542,7 +550,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BCF6B3225EE730A00CD12C3 /* DeteilViewControllerTests.swift in Sources */,
+				5BCF6B3225EE730A00CD12C3 /* DetailViewControllerTests.swift in Sources */,
 				5B35380325E10A2E0045D917 /* TaskManagerTests.swift in Sources */,
 				5B3537FD25E106850045D917 /* LacationTests.swift in Sources */,
 				5B75C3A125EE33DF004DC4B2 /* TaskCellTests.swift in Sources */,

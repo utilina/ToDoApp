@@ -33,7 +33,7 @@ class NewTaskViewControllerTests: XCTestCase {
     }
 
     func testHasAdressTextField() {
-        XCTAssertTrue(sut.adressTextField.isDescendant(of: sut.view))
+        XCTAssertTrue(sut.addressTextField.isDescendant(of: sut.view))
     }
 
     func testHasDescriptionTextField() {
@@ -56,7 +56,7 @@ class NewTaskViewControllerTests: XCTestCase {
         sut.titleTextField.text = "Foo"
         sut.locationTextField.text = "Bar"
         //sut.dateTextField.text = "01.01.19"
-        sut.adressTextField.text = "Уфа"
+        sut.addressTextField.text = "Уфа"
         sut.descriptionTextField.text = "Baz"
 
         sut.taskManager = TaskManager()
@@ -109,7 +109,23 @@ class NewTaskViewControllerTests: XCTestCase {
     }
 
     func testSaveDismissesNewTaskViewController() {
-        
+        let mockNewTaskViewController = MockNewTaskViewController()
+        mockNewTaskViewController.titleTextField = UITextField()
+        mockNewTaskViewController.titleTextField.text = "Foo"
+        mockNewTaskViewController.descriptionTextField = UITextField()
+        mockNewTaskViewController.descriptionTextField.text = "Bar"
+        mockNewTaskViewController.locationTextField = UITextField()
+        mockNewTaskViewController.locationTextField.text = "Baz"
+        mockNewTaskViewController.dateTextField = UITextField()
+        mockNewTaskViewController.dateTextField.text = "02.04.04"
+        mockNewTaskViewController.addressTextField = UITextField()
+        mockNewTaskViewController.addressTextField.text = "Уфа"
+
+        mockNewTaskViewController.save()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+            XCTAssertTrue(mockNewTaskViewController.isDismissed)
+        }
     }
 }
 
@@ -141,5 +157,16 @@ extension XCTestCase {
             exp.fulfill()
         }
         waitForExpectations(timeout: interval + 0.1) // add 0.1 for sure asyn after called
+    }
+}
+
+extension NewTaskViewControllerTests {
+
+    class MockNewTaskViewController: NewTaskViewController {
+        var isDismissed = false
+
+        override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+            isDismissed = true
+        }
     }
 }

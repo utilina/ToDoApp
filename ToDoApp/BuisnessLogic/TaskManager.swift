@@ -24,6 +24,7 @@ class TaskManager {
         if !tasks.contains(task) {
             tasks.append(task)
         }
+        print(tasks)
     }
 
     func task(at index: Int) -> Task {

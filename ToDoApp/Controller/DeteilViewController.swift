@@ -15,7 +15,7 @@ class DeteilViewController: UIViewController {
     let locationLabel = UILabel()
     let dateLabel = UILabel()
     let mapView = MKMapView()
-    var task: Task?
+    var task: Task!
     var dateFormatter: DateFormatter {
         let df = DateFormatter()
         df.dateFormat = "dd.MM.yy"
@@ -38,17 +38,18 @@ class DeteilViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        if let coordinate = task?.location?.coordinate {
+        super.viewWillAppear(true)
+
+        if let coordinate = task.location?.coordinate {
             print(coordinate)
             let span = MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
             let region = MKCoordinateRegion(center: coordinate, span: span)
             mapView.setRegion(region, animated: true)
         }
-        super.viewWillAppear(true)
-        self.titleLabel.text = task?.title
-        self.descriptionLabel.text = task?.description
-        self.locationLabel.text = task?.location?.name
-        self.dateLabel.text = dateFormatter.string(from: (task?.date)!)
+        self.titleLabel.text = task.title
+        self.descriptionLabel.text = task.description
+        self.locationLabel.text = task.location?.name
+        self.dateLabel.text = dateFormatter.string(from: (task.date))
     }
 
     func setLabelConstraints() {

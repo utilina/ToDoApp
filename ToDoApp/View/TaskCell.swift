@@ -21,7 +21,7 @@ class TaskCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = .black
+        backgroundColor = .white
 
         contentView.addSubview(titleLabel)
         contentView.addSubview(locationLabel)
@@ -29,6 +29,10 @@ class TaskCell: UITableViewCell {
         setLabelConstraints()
         setLocationLabelConstraints()
         setDateLabelConstraints()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     func setLabelConstraints() {
@@ -55,9 +59,7 @@ class TaskCell: UITableViewCell {
         dateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 5).isActive = true
     }
 
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+
     
     func configure(withTask task: Task, done: Bool = false) {
         if done {

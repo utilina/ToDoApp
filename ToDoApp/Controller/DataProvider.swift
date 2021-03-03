@@ -17,9 +17,10 @@ class DataProvider: NSObject {
 
     var taskManager: TaskManager?
 
-    override init() {
-        taskManager = TaskManager()
-    }
+//    override init() {
+//        self.taskManager = TaskManager()
+//        super.init()
+//    }
 }
 
 // MARK: - TableViewDelegate
